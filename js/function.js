@@ -37,7 +37,10 @@ document
     // getting withdraw input and update total withdraw;
     const newInputWithdrawAmount = inputStringToNumber("withdraw-input");
     const withdrawDisplayTotal = innerTextToNumber("withdraw-total");
-    if (newInputWithdrawAmount > 0) {
+    if (
+      newInputWithdrawAmount > 0 &&
+      newInputWithdrawAmount <= innerTextToNumber("balance-total")
+    ) {
       document.getElementById("withdraw-total").innerText =
         newInputWithdrawAmount + withdrawDisplayTotal;
 
